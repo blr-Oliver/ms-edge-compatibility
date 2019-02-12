@@ -1,0 +1,17 @@
+.clip-test {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e44;
+}
+
+.clip-test>* {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #4e4;
+}

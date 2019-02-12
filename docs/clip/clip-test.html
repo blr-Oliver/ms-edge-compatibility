@@ -4,8 +4,27 @@
 <meta charset="UTF-8">
 <title>Fullscreen test</title>
 <link rel="stylesheet" href="clip.css" />
-<script src="clip.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+<script src="clip-test.js"></script>
 </head>
-<body>
+<body ng-app="clip-test" ng-controller="RootCtrl as app">
+  <div class="container">
+    <div class="row pt-4">
+      <div class="col-6">
+        <div class="clip-test">
+          <div data-clip-test="app.fraction"></div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form">
+          <div class="form-group">
+            <label>Fraction</label>
+            <input type="number" class="form-control" ng-model="app.fraction" min="0" max="100" step="1" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
