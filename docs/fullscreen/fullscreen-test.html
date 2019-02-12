@@ -13,11 +13,15 @@
 <body ng-app="fullscreen-test" ng-controller="RootCtrl as app" ng-class="{fullscreen: app.isFullscreen}">
   <div class="container">
     <p class="pt-4">
+      <a href="..">Home</a>
+    </p>
+    <p>
       Remember that fullscreen can also be toggled by browser specific key (typically <code>F11</code>)
     </p>
-    
+
     <p>
-      Fullscreen features are <strong ng-class="{text-danger: !fullscreen.enabled}">{{fullscreen.enabled ? 'enabled' : 'disabled'}}</strong>
+      Fullscreen features are <strong ng-class="{text-danger: !fullscreen.enabled}">{{fullscreen.enabled ?
+        'enabled' : 'disabled'}}</strong>
     </p>
     <hr class="my-4" />
 
