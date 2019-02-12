@@ -15,10 +15,14 @@
     <p class="pt-4">
       Remember that fullscreen can also be toggled by browser specific key (typically <code>F11</code>)
     </p>
+    
+    <p>
+      Fullscreen features are <strong ng-class="{text-danger: !fullscreen.enabled}">{{fullscreen.enabled ? 'enabled' : 'disabled'}}</strong>
+    </p>
     <hr class="my-4" />
 
     <div class="text-center">
-      <button class="btn btn-lg" ng-click="fullscreen.toggle()">Toggle fullscreen</button>
+      <button class="btn btn-lg btn-primary" ng-click="fullscreen.toggle()">Toggle fullscreen</button>
     </div>
   </div>
 </body>
