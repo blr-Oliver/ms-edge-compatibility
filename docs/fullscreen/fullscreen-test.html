@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <title>Fullscreen test</title>
 <link rel="stylesheet" href="fullscreen.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
 <script src="fullscreen-names.js"></script>
 <script src="fullscreen.js"></script>
 <script src="fullscreen-test.js"></script>
 </head>
-<body ng-app="fullscreen-test">
+<body ng-app="fullscreen-test" ng-controller="RootCtrl as app" ng-class="{fullscreen: app.isFullscreen}">
+  <div class="container">
+    <p class="pt-4">
+      Remember that fullscreen can also be toggled by browser specific key (typically <code>F11</code>)
+    </p>
+    <hr class="my-4" />
+
+    <div class="text-center">
+      <button class="btn btn-lg" ng-click="fullscreen.toggle()">Toggle fullscreen</button>
+    </div>
+  </div>
 </body>
 </html>
