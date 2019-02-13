@@ -10,19 +10,32 @@
 <script src="fullscreen.js"></script>
 <script src="fullscreen-test.js"></script>
 </head>
-<body ng-app="fullscreen-test" ng-controller="RootCtrl as app" ng-class="{fullscreen: app.isFullscreen}">
-  <div class="container">
+<body ng-app="fullscreen-test" ng-controller="RootCtrl as app" ng-class="{'fullscreen': app.isFullscreen}">
+  <div class="container" style="background-color: white;">
     <p class="pt-4">
       <a href="..">Home</a>
     </p>
     <p>
-      Remember that fullscreen can also be toggled by browser specific key (typically <code>F11</code>)
+      Remember that fullscreen can also be toggled by browser specific key (typically
+      <code>F11</code>
+      )
     </p>
 
     <p>
       Fullscreen features are <strong ng-class="{'text-danger': !fullscreen.enabled}">{{fullscreen.enabled ?
         'enabled' : 'disabled'}}</strong>
     </p>
+
+    <p>
+      Fullscreen is <strong>{{app.isFullscreen ? 'ON' : 'OFF'}}</strong>
+    </p>
+
+    <p>API endpoints available
+<pre>
+{{fullscreenNames | json}}
+</pre>
+    </p>
+
     <hr class="my-4" />
 
     <div class="text-center">
