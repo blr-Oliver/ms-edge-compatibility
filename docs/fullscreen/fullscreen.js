@@ -38,6 +38,7 @@ function fullscreenFactory(names, $window, $document, $rootScope){
         $document[0][names.exitFullscreen]();
     },
     toggle: function(element){
+      console.log('in fullscreen: ' + this.active);
       this.active ? this.exit() : this.request(element);
     },
     $watch: function(cb, $scope){
@@ -70,10 +71,11 @@ function fullscreenFactory(names, $window, $document, $rootScope){
           return $window.fullScreen; // Firefox nicely provides this flag
         if(names.fullscreen && $document[0][names.fullscreen] || this.element != null)
           return true; //there is explicit element in fullscreen mode
-        // okay, now try hard to guess  
-        return ($window.innerWidth === $window.screen.width /*width is good*/ &&
-          ($window.innerHeight === $window.screen.height || /*height is good*/
-           $window.outerHeight > $window.screen.availHeight /*or even better*/));
+        // okay, now try hard to guess
+        return false;
+//        return ($window.innerWidth === $window.screen.width /*width is good*/ &&
+//          ($window.innerHeight === $window.screen.height || /*height is good*/
+//           $window.outerHeight > $window.screen.availHeight /*or even better*/));
       }
     },
     //This property indicates whether fullscreen was enabled manually by user
